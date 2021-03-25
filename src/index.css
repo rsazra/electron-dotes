@@ -9,7 +9,7 @@ body {
   justify-content: center;
 }
 
-.fulltext {
+#fulltext {
   margin: 0;
   padding: 10px;
   width: 95%;
@@ -18,6 +18,19 @@ body {
   border: 0;
 }
 
-.fulltext:focus {
+#fulltext:focus {
   outline: none;
+}
+
+#sun {
+  width: 33px;
+  height: auto;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.33;
+}
+
+#sun:hover {
+  opacity: 1;
 }
