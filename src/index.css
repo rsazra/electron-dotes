@@ -9,7 +9,7 @@ body {
   justify-content: center;
 }
 
-#fulltext {
+#content {
   margin: 0;
   padding: 10px;
   width: 95%;
@@ -18,7 +18,7 @@ body {
   border: 0;
 }
 
-#fulltext:focus {
+#content:focus {
   outline: none;
 }
 
