@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { ipcMain, ipcRenderer } = require('electron');
-const store = require('electron-store');
+const store = require('conf');
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 

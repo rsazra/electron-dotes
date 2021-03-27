@@ -1,6 +1,5 @@
 const { app, BrowserWindow, Menu, ipcMain, ipcRenderer, dialog } = require('electron');
 const path = require('path');
-const store = require('electron-store');
 
 const createWindow = () => {
   // Create the browser window.

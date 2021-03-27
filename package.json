@@ -42,6 +42,7 @@
     }
   },
   "dependencies": {
+    "conf": "^9.0.2",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^7.0.2"
   },
