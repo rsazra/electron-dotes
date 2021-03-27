@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { ipcMain, ipcRenderer } = require('electron');
+const store = require('electron-store');
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -10,13 +11,17 @@ const d = new Date();
 const time = `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`
 const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2,'0')}-${d.getDate()}`;
 
-
-const journal = '/Users/rajbirsinghazra/Documents/journal';
-const month = path.join(journal, String(d.getFullYear()), months[d.getMonth()]);
+const config = new store();
+console.log(config.path);
+if (!config.has('journal')) {
+    config.set('journal', ipcRenderer.sendSync('define-path'));
+}
+const journal = config.get('journal');
+console.log(journal);
+const month = path.join(journal[0], String(d.getFullYear()), months[d.getMonth()]);
 const file = path.join(month, today);
 
 let existed = true;
-
 fs.mkdirSync(month, { recursive: true });
 try {
     fs.accessSync(file);

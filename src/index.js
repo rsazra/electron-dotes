@@ -1,5 +1,6 @@
-const { app, BrowserWindow, Menu, ipcMain, ipcRenderer } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, ipcRenderer, dialog } = require('electron');
 const path = require('path');
+const store = require('electron-store');
 
 const createWindow = () => {
   // Create the browser window.
@@ -128,3 +129,14 @@ Menu.setApplicationMenu(menu)
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+ipcMain.on('define-path', (event, arg) => {
+  console.log("got it");
+  let journal = undefined;
+  while (journal === undefined) {
+    //alert("Select where to store your journal.");
+    journal = dialog.showOpenDialogSync({
+      properties: ['openDirectory', 'createDirectory']
+    });
+  }
+  event.returnValue = journal;
+});
