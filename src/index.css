@@ -1,3 +1,17 @@
+:root {
+  --text-size: 1em;
+}
+
+[theme="light"] {
+  --background-color: white;
+  --text-color: black;
+}
+
+[theme="dark"] {
+  --background-color: black;
+  --text-color: white;
+}
+
 body {
   height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -7,6 +21,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--background-color);
 }
 
 #content {
@@ -16,6 +31,8 @@ body {
   height: 95vh;
   resize: none;
   border: 0;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 #content:focus {
@@ -33,4 +50,5 @@ body {
 
 #sun:hover {
   opacity: 1;
+  cursor: pointer;
 }

@@ -43,3 +43,5 @@ ipcRenderer.on('save', (event, arg) => {
     fs.writeFileSync(file, text.value);
     alert("saved");
 });
+
+localStorage.setItem('theme', 'light');
