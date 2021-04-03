@@ -40,6 +40,13 @@ const template = [
     submenu: [
       { role: 'about' },
       { type: 'separator' },
+      { label: 'Preferences...', accelerator: 'CmdOrCtrl+,',
+        click() {
+          let prefWindow = new BrowserWindow({ width: 500, height: 300, resizable: false });
+          prefWindow.loadFile(path.join(__dirname, 'pref.html'));
+        }
+      },
+      { type: 'separator' },
       { role: 'services' },
       { type: 'separator' },
       { role: 'hide' },

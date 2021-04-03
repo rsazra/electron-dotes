@@ -1,4 +1,4 @@
-let html = document.documentElement;
+const html = document.documentElement;
 
 const sun = document.getElementById("sun");
 const text = document.getElementById("content");
