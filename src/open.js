@@ -9,7 +9,7 @@ const text = document.getElementById("content");
 
 const d = new Date();
 const time = `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`
-const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2,'0')}-${d.getDate()}`;
+const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 
 const config = new store();
 console.log(config.path);
@@ -35,13 +35,16 @@ if (!existed) {
 }
 fs.appendFileSync(file, `\n\n${time} -- `);
 text.value = fs.readFileSync(file, { encoding: "utf8" });
+document.title = today;
 
 text.focus();
 text.selectionStart = text.value.length;
 
 ipcRenderer.on('save', (event, arg) => {
     fs.writeFileSync(file, text.value);
-    alert("saved");
+    if (document.title.endsWith("*")) {
+        document.title = document.title.slice(0,-1);
+    }
 });
 
 localStorage.setItem('theme', 'light');

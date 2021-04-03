@@ -1,6 +1,7 @@
 let html = document.documentElement;
 
-let sun = document.getElementById("sun");
+const sun = document.getElementById("sun");
+const text = document.getElementById("content");
 
 sun.addEventListener('click', (e) => {
     if (localStorage.getItem('theme') === 'light') {
@@ -12,3 +13,9 @@ sun.addEventListener('click', (e) => {
         localStorage.setItem('theme', 'light');
     }
 });
+
+text.onkeypress = e => {
+    if (!document.title.endsWith("*")) {
+        document.title += "*";
+    }
+}
