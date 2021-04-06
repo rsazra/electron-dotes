@@ -15,6 +15,9 @@
     width: auto;
     width: 60%
 }
+.form-input, .form-input:active, .form-input:focus {
+    outline: none;
+}
 
 #dark-mode-toggle {
     align-self: center;
@@ -40,8 +43,4 @@
 #template {
     resize: none;
     height: 40vh;
-}
-
-.form-input, .form-input:active, .form-input:focus {
-    outline: none;
 }
