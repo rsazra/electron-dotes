@@ -42,7 +42,7 @@ const template = [
       { type: 'separator' },
       { label: 'Preferences...', accelerator: 'CmdOrCtrl+,',
         click() {
-          let prefWindow = new BrowserWindow({ width: 500, height: 300, resizable: false });
+          let prefWindow = new BrowserWindow({ width: 500, height: 375, resizable: false });
           prefWindow.loadFile(path.join(__dirname, 'pref.html'));
         }
       },

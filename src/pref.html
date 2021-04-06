@@ -10,11 +10,14 @@
     <div class="options">
       <div class="form-entry">
         <p class="form-label">Dark mode:</p>
-        <input type="checkbox" id="dark-mode-toggle" class="form-input">
+        <select id="dark-mode-toggle" class="form-input">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
       </div>
       <div class="form-entry">
         <p class="form-label">Font size:</p>
-        <input type="range" id="font-size" class="form-input">
+        <input type="range" id="font-size" class="form-input" min="8" max="32">
       </div>
       <div class="form-entry">
         <p class="form-label"> Daily template:</p>

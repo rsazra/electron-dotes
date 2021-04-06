@@ -1,9 +1,9 @@
 .options {
-    width: 75vw;
+    width: 85vw;
 }
 
 .form-label {
-    width: 50%;
+    width: 40%;
 }
 
 .form-entry {
@@ -13,8 +13,35 @@
 
 .form-input{
     width: auto;
+    width: 60%
 }
 
 #dark-mode-toggle {
     align-self: center;
+}
+
+#font-size {
+    align-self: center;
+    -webkit-appearance: none;
+    height: 1px;
+    background-color: black;
+    outline: none;
+}
+#font-size::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#template {
+    resize: none;
+    height: 40vh;
+}
+
+.form-input, .form-input:active, .form-input:focus {
+    outline: none;
 }
