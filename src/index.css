@@ -1,5 +1,6 @@
 :root {
   --text-size: 1em;
+  font-size: var(--text-size);
 }
 
 [theme="light"] {
@@ -33,6 +34,7 @@ body {
   border: 0;
   color: var(--text-color);
   background-color: var(--background-color);
+  font-size: var(--text-size);
 }
 
 #content:focus {

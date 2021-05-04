@@ -22,7 +22,9 @@ console.log(journal);
 if (config.get('theme') == undefined) {
     config.set('theme', 'light');
 }
-//ipcRenderer.sendSync('theme-update', config.get('theme'));
+if (config.get('textsize') == undefined) {
+    config.set('textsize', '1em');
+}
 
 const month = path.join(journal[0], String(d.getFullYear()), months[d.getMonth()]);
 const file = path.join(month, today);

@@ -26,6 +26,7 @@
     width: auto;
     width: 60%;
     color: var(--text-color);
+    font-size: var(--text-size);
 }
 .form-input, .form-input:active, .form-input:focus {
     outline: none;

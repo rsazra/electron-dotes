@@ -21,7 +21,11 @@ const createWindow = () => {
   ipcMain.on('theme-update', (event, arg) => {
     event.reply('theme-update', arg);
     mainWindow.webContents.send('theme-update', arg);
-    //ipcRenderer.sendSync('change-theme', arg);
+  });
+
+  ipcMain.on('text-update', (event, arg) => {
+    event.reply('text-update', arg);
+    mainWindow.webContents.send('text-update', arg);
   });
 
   mainWindow.on('closed', (e) => {
