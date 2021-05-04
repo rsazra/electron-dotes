@@ -18,6 +18,12 @@ if (!config.has('journal')) {
 }
 const journal = config.get('journal');
 console.log(journal);
+
+if (config.get('theme') == undefined) {
+    config.set('theme', 'light');
+}
+//ipcRenderer.sendSync('theme-update', config.get('theme'));
+
 const month = path.join(journal[0], String(d.getFullYear()), months[d.getMonth()]);
 const file = path.join(month, today);
 
@@ -46,5 +52,3 @@ ipcRenderer.on('save', (event, arg) => {
         document.title = document.title.slice(0,-1);
     }
 });
-
-localStorage.setItem('theme', 'light');

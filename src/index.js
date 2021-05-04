@@ -18,6 +18,15 @@ const createWindow = () => {
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
+  ipcMain.on('theme-update', (event, arg) => {
+    event.reply('theme-update', arg);
+    mainWindow.webContents.send('theme-update', arg);
+    //ipcRenderer.sendSync('change-theme', arg);
+  });
+
+  mainWindow.on('closed', (e) => {
+    app.quit();
+  });
 };
 
 // This method will be called when Electron has finished
@@ -67,7 +76,7 @@ const template = [
     submenu: [
       {label: 'Save', accelerator: 'CmdOrCtrl+S',
         click(menuItem, browserWindow, event) {
-          browserWindow.send('save')
+          browserWindow.send('save');
         }
       },
       isMac ? { role: 'close' } : { role: 'quit' }
