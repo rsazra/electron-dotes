@@ -42,7 +42,12 @@ const template = [
       { type: 'separator' },
       { label: 'Preferences...', accelerator: 'CmdOrCtrl+,',
         click() {
-          let prefWindow = new BrowserWindow({ width: 500, height: 375, resizable: false });
+          let prefWindow = new BrowserWindow({ 
+            webPreferences: {
+              nodeIntegration: true,
+              contextIsolation: false
+            },
+            width: 500, height: 375, resizable: false });
           prefWindow.loadFile(path.join(__dirname, 'pref.html'));
         }
       },
@@ -144,5 +149,13 @@ ipcMain.on('define-path', (event, arg) => {
       properties: ['openDirectory', 'createDirectory']
     });
   }
+  event.returnValue = journal;
+});
+
+ipcMain.on('new-path', (event, arg) => {
+  console.log("got it");
+  journal = dialog.showOpenDialogSync({
+    properties: ['openDirectory', 'createDirectory']
+  });
   event.returnValue = journal;
 });
