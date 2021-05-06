@@ -7,7 +7,7 @@ const root = document.querySelector(':root');
 const store = require('conf');
 const config = new store();
 html.setAttribute('theme', config.get('theme'));
-root.style.setProperty('--text-size', config.get('textsize'));
+root.style.setProperty('--text-size', `${config.get('textsize')}em`);
 console.log(getComputedStyle(document.querySelector(':root')).getPropertyValue('--text-size'));
 
 sun.addEventListener('click', (e) => {

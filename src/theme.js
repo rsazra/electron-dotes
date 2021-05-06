@@ -7,5 +7,5 @@ ipcRenderer.on('theme-update', (event, arg) => {
 });
 
 ipcRenderer.on('text-update', (event, arg) => {
-    root.style.setProperty('--text-size', arg);
+    root.style.setProperty('--text-size', `${arg}em`);
 });

@@ -15,12 +15,12 @@ themepicker.oninput = e => {
     ipcRenderer.send('theme-update', themepicker.value);
 }
 
-document.querySelector(':root').style.setProperty('--text-size', config.get('textsize'));
+document.querySelector(':root').style.setProperty('--text-size', `${config.get('textsize')}em`);
 sizeslider.setAttribute("value", config.get('textsize'));
 
 sizeslider.oninput = e => {
-    config.set('textsize', `${sizeslider.value}em`);
-    ipcRenderer.send('text-update', `${sizeslider.value}em`);
+    config.set('textsize', sizeslider.value);
+    ipcRenderer.send('text-update', sizeslider.value);
     // how do we then make the font sizes everywhere change
 }
 
