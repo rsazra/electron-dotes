@@ -7,21 +7,17 @@ const sizeslider = document.getElementById("font-size");
 const savelocation = document.getElementById("save-location");
 
 const config = new store();
-html.setAttribute('theme', config.get('theme'));
 themepicker.value = config.get('theme');
+sizeslider.setAttribute("value", config.get('textsize'));
 
 themepicker.oninput = e => {
     config.set('theme', themepicker.value);
     ipcRenderer.send('theme-update', themepicker.value);
 }
 
-document.querySelector(':root').style.setProperty('--text-size', `${config.get('textsize')}em`);
-sizeslider.setAttribute("value", config.get('textsize'));
-
 sizeslider.oninput = e => {
     config.set('textsize', sizeslider.value);
     ipcRenderer.send('text-update', sizeslider.value);
-    // how do we then make the font sizes everywhere change
 }
 
 savelocation.onclick = e => {

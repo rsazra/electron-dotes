@@ -1,0 +1,25 @@
+:root {
+    --text-size: 1em;
+    font-size: var(--text-size);
+}
+
+[theme="light"] {
+    --background-color: white;
+    --text-color: black;
+}
+
+[theme="dark"] {
+    --background-color: black;
+    --text-color: white;
+}
+
+#viewer {
+    width: 50vw;
+    opacity: 75%;
+}
+
+#sidebar {
+    width: 50vw;
+    height: 100vh;
+    background-color: red;
+}

@@ -5,7 +5,7 @@ const store = require('conf');
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-const text = document.getElementById("content");
+const text = document.getElementById("editor");
 
 const d = new Date();
 const time = `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`

@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="alt.css">
   </head>
   <body>
-    <h1>ALT</h1>
-    <textarea id="fulltext" spellcheck="false"></textarea>
+    <textarea id="viewer" class="content" spellcheck="false"></textarea>
     <a href="index.html">
       <img src="images/logo.png" alt="sun" id="sun"></img>
     </a>
-    <script src="open.js" defer></script>
+    <div id="sidebar">
+      SIDE
+    </div>
+    <script>require('./theme.js')</script>
   </body>
 </html>
