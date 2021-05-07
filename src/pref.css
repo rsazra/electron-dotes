@@ -23,7 +23,6 @@
 }
 
 .form-input{
-    width: auto;
     width: 60%;
     color: var(--text-color);
     font-size: var(--text-size);
@@ -31,12 +30,22 @@
 .form-input, .form-input:active, .form-input:focus {
     outline: none;
 }
+.form-input:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
 
 #theme-picker {
     align-self: center;
     border-radius: 0%;
     border: 1px solid var(--text-color);
     background-color: var(--background-color);
+    cursor: pointer;
+}
+#theme-picker:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
 
 #font-size {
@@ -55,6 +64,9 @@
     background-color: var(--background-color);
     border: 1px solid var(--text-color);
 }
+#font-size::-webkit-slider-thumb:hover {
+    background-color: var(--text-color);
+}
 
 #save-location {
     align-self: center;
@@ -62,4 +74,8 @@
     border: 1px solid var(--text-color);
     background-color: var(--background-color);
     cursor: pointer;
+}
+#save-location:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
