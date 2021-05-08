@@ -154,7 +154,6 @@ Menu.setApplicationMenu(menu)
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 ipcMain.on('define-path', (event, arg) => {
-  console.log("got it");
   let journal = undefined;
   while (journal === undefined) {
     //alert("Select where to store your journal.");
@@ -166,7 +165,6 @@ ipcMain.on('define-path', (event, arg) => {
 });
 
 ipcMain.on('new-path', (event, arg) => {
-  console.log("got it");
   journal = dialog.showOpenDialogSync({
     properties: ['openDirectory', 'createDirectory']
   });

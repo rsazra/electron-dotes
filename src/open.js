@@ -12,7 +12,6 @@ const time = `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).p
 const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 
 const config = new store();
-console.log(config.path);
 if (!config.has('journal')) {
     config.set('journal', ipcRenderer.sendSync('define-path'));
 }
