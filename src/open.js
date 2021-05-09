@@ -16,7 +16,6 @@ if (!config.has('journal')) {
     config.set('journal', ipcRenderer.sendSync('define-path'));
 }
 const journal = config.get('journal');
-console.log(journal);
 
 if (config.get('theme') == undefined) {
     config.set('theme', 'light');
